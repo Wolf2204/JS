@@ -11,10 +11,14 @@ function abc (...arg) {
 
 
 //задача 1
-let string1 = 'папа';
+let string1 = 'паП';
+
+
 (function string (sting) {
-    let a = sting.split('').reverse().join('');
-    if (a === sting) {
+    let b = sting.toLowerCase();
+    let a = b.split('').reverse().join('');
+
+    if (a === b) {
         console.log(true)
     } else {
         console.log(false)
