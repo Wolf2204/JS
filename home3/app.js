@@ -82,8 +82,8 @@ let p1 = document.body.querySelector('.player1'),
     p2 = document.body.querySelector('.player2');
 
 for (let i = 0; i < halfCards; i++) {
-    div1 = document.createElement('div');
-    div2 = document.createElement('div');
+    let div1 = document.createElement('div');
+    let div2 = document.createElement('div');
     p1.appendChild(div1);
     p2.appendChild(div2);
 }
