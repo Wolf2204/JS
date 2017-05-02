@@ -34,7 +34,7 @@ arr4[0].suit = 'крести';
 let rand = [arr1, arr2, arr3, arr4];
 let a = rand[Math.floor(Math.random() * rand.length)];
 
-(function newArr(a) {
+(function choiceSuit (a) {
     for (let i = 0; i < a.length; i++) {
         a[i].val = a[i].val * 100;
     }
