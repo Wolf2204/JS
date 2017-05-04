@@ -26,20 +26,20 @@ let arr1 = [],
     }
 }(arr1, arr2, arr3, arr4));
 
-arr1[0].suit = 'бубна';
-arr2[0].suit = 'черви';
-arr3[0].suit = 'пика';
-arr4[0].suit = 'крести';
+arr1.suit = 'бубна';
+arr2.suit = 'черви';
+arr3.suit = 'пика';
+arr4.suit = 'крести';
 
 let rand = [arr1, arr2, arr3, arr4];
-let a = rand[Math.floor(Math.random() * rand.length)];
+let choiceSuit = rand[Math.floor(Math.random() * rand.length)];
 
-(function choiceSuit (a) {
+(function createSuit (a) {
     for (let i = 0; i < a.length; i++) {
         a[i].val = a[i].val * 100;
     }
     return a;
-}(a));
+}(choiceSuit));
 
 let deck = arr1.concat(arr2, arr3, arr4);
 let deckPetya = [],
@@ -56,16 +56,16 @@ let resultPetya = 0,
     resultVasya = 0;
 
 for (let i = halfCards - 1; i >= 0; i--) {
-    let e = deckPetya[i],
-        f = deckVasya[i];
-    if (e[0].val > f[0].val) {
+    let e = deckPetya[i][0].val,
+        f = deckVasya[i][0].val;
+    if (e > f) {
         resultPetya += 1;
-    } else if (e[0].val < f[0].val) {
+    } else if (e < f) {
         resultVasya += 1;
     }
 }
 
-let suit = 'Козырь: ' + a[0].suit;
+let suit = 'Козырь: ' + choiceSuit.suit;
 
 if (resultPetya > resultVasya) {
     el.textContent = 'Winner: Петя. ' + suit;
@@ -92,12 +92,12 @@ let player1 = document.querySelectorAll('.player1 div'),
     player2 = document.querySelectorAll('.player2 div');
 
 for (let i = 0, j = halfCards - 1; i < halfCards; i++, j--) {
-    let o = deckPetya[j];
-    let p = deckVasya[j];
+    let o = deckPetya[j][0].card;
+    let p = deckVasya[j][0].card;
     let image1 = document.createElement('img');
-    image1.src = o[0].card;
+    image1.src = o;
     let image2 = document.createElement('img');
-    image2.src = p[0].card;
+    image2.src = p;
     player1[i].appendChild(image1);
     player2[i].appendChild(image2);
 }
