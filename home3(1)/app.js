@@ -106,8 +106,10 @@ let player1 = document.querySelectorAll('.player1 div'),
     player2 = document.querySelectorAll('.player2 div');
 
 for (let i = 0, j = halfCards - 1; i < halfCards; i++, j--) {
-    player1[i].innerHTML = deckPetya[j][0].card;
-    player2[i].innerHTML = deckVasya[j][0].card;
-    player1[i].style.color = deckPetya[j][0].color;
-    player2[i].style.color = deckVasya[j][0].color;
+    let l = deckPetya[j][0],
+        m = deckVasya[j][0];
+    player1[i].innerHTML = l.card;
+    player2[i].innerHTML = m.card;
+    player1[i].style.color = l.color;
+    player2[i].style.color = m.color;
 }
