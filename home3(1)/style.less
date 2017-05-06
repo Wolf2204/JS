@@ -1,0 +1,28 @@
+.winner {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.result {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+section {
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+  &.player1 {
+    border-right: none;
+  }
+  > div {
+    border-top: 1px solid black;
+    font-size: 60pt;
+  }
+}
