@@ -4,6 +4,7 @@ let pet = document.querySelector('.pet'),
 
 let sumCards = 36;
 let halfCards = sumCards / 2;
+let suitCard = ['бубна', 'черви', 'пика', 'крести'];
 let arr1 = [],
     arr2 = [],
     arr3 = [],
@@ -16,7 +17,8 @@ let arr1 = [],
         for (let j = 1; j <= 14; j++) {
             arg[i].push({
                 val: j,
-                card: '&#1271' + (number + j) + ';'
+                card: '&#1271' + (number + j) + ';',
+                suit: suitCard[i]
             })
         }
         if(sumCards === 36){
@@ -38,12 +40,6 @@ let arr1 = [],
         }
     }
 }(arr2, arr3));
-
-console.log(arr1, arr2, arr3, arr4);
-arr1.suit = 'пика';
-arr2.suit = 'черви';
-arr3.suit = 'бубна';
-arr4.suit = 'крести';
 
 let rand = [arr1, arr2, arr3, arr4];
 let choiceSuit = rand[Math.floor(Math.random() * rand.length)];
@@ -79,7 +75,7 @@ for (let i = halfCards - 1; i >= 0; i--) {
     }
 }
 
-let suit = 'Козырь: ' + choiceSuit.suit;
+let suit = 'Козырь: ' + choiceSuit[0].suit;
 
 if (resultPetya > resultVasya) {
     el.textContent = 'Winner: Петя. ' + suit;
