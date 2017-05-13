@@ -4,7 +4,7 @@ let pet = document.querySelector('.pet'),
 
 let sumCards = 36;
 let halfCards = sumCards / 2;
-let suitCard = ['бубна', 'черви', 'пика', 'крести'];
+let suitCard = ['пика', 'черви', 'бубна', 'крести'];
 let arr1 = [],
     arr2 = [],
     arr3 = [],
