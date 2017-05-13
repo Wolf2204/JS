@@ -2,16 +2,17 @@ let el = document.body.querySelector('.winner');
 let pet = document.querySelector('.pet'),
     vas = document.querySelector('.vas');
 
-let sumCards = 36;
+let sumCards = 52;
 let halfCards = sumCards / 2;
 let suitLength = sumCards / 4;
-let suitNumber = [0, 1, 2, 3];
+let suitCard = ['бубна', 'черви', 'пика', 'крести'];
 let arr1 = [],
     arr2 = [],
     arr3 = [],
     arr4 = [];
 
 (function deckList (...arg) {
+    let number = 0;
     let deckLength = 'cards36/';
     if (sumCards === 52) {
         deckLength = 'cards52/';
@@ -20,20 +21,22 @@ let arr1 = [],
         for (let j = 1; j <= suitLength; j++) {
             arg[i].push({
                 val: j,
-                card: deckLength + (j + suitNumber[i] * suitLength) + '.jpg'
+                card: deckLength + (j + number) + '.jpg',
+                suit: suitCard[i]
             })
         }
+        if (sumCards === 36) {
+            number += 9;
+        } else {
+            number += 13;
+        }
+
     }
 }(arr1, arr2, arr3, arr4));
 
-arr1.suit = 'бубна';
-arr2.suit = 'черви';
-arr3.suit = 'пика';
-arr4.suit = 'крести';
-
 let rand = [arr1, arr2, arr3, arr4];
 let choiceSuit = rand[Math.floor(Math.random() * rand.length)];
-
+console.log(choiceSuit);
 (function createSuit (a) {
     for (let i = 0; i < a.length; i++) {
         a[i].val = a[i].val * 100;
@@ -65,7 +68,7 @@ for (let i = halfCards - 1; i >= 0; i--) {
     }
 }
 
-let suit = 'Козырь: ' + choiceSuit.suit;
+let suit = 'Козырь: ' + choiceSuit[0].suit;
 
 if (resultPetya > resultVasya) {
     el.textContent = 'Winner: Петя. ' + suit;
