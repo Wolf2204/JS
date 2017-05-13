@@ -2,7 +2,7 @@ let el = document.body.querySelector('.winner');
 let pet = document.querySelector('.pet'),
     vas = document.querySelector('.vas');
 
-let sumCards = 52;
+let sumCards = 36;
 let halfCards = sumCards / 2;
 let suitLength = sumCards / 4;
 let suitCard = ['бубна', 'черви', 'пика', 'крести'];
