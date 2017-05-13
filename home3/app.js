@@ -36,7 +36,7 @@ let arr1 = [],
 
 let rand = [arr1, arr2, arr3, arr4];
 let choiceSuit = rand[Math.floor(Math.random() * rand.length)];
-console.log(choiceSuit);
+
 (function createSuit (a) {
     for (let i = 0; i < a.length; i++) {
         a[i].val = a[i].val * 100;
