@@ -17,7 +17,7 @@ function asyncMap1(arr, fn) {
             arr1.push(res);
         });
     });
-    return promise.then(function (resolve) {
+    return promise.then(function () {
         return arr1;
     });
 
